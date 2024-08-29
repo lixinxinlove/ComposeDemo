@@ -47,11 +47,10 @@ import com.lixinxin.composedemo.ui.screen.route.ScreenRoute
 import kotlinx.coroutines.delay
 
 @Composable
-fun WelcomeScreen(navController: NavHostController) {
+fun WelcomeScreen() {
 
 
     var name by rememberSaveable { mutableStateOf("") }
-
 
     LaunchedEffect(key1 = 1) {
         delay(3000)
@@ -157,6 +156,5 @@ fun InputName(name: String, onValueChange: (String) -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun WelcomeScreenPreview() {
-
-    WelcomeScreen(rememberNavController())
+    WelcomeScreen()
 }

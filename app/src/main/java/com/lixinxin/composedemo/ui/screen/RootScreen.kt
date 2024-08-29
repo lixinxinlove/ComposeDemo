@@ -25,6 +25,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.lixinxin.composedemo.ui.screen.tab.HomeScreen
+import com.lixinxin.composedemo.ui.screen.tab.MyScreen
 import kotlin.reflect.KFunction1
 
 @Composable
@@ -54,7 +56,13 @@ fun RootScreen() {
 @Composable
 fun RootContent(innerPadding: PaddingValues, index: Int) {
     Box(modifier = Modifier.padding(innerPadding)) {
-        Text(text = "$index")
+
+        if (index == 0) {
+            HomeScreen()
+        } else {
+            MyScreen()
+        }
+
     }
 }
 
